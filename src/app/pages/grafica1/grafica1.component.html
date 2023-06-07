@@ -1,8 +1,27 @@
 <div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-            </div>
-        </div>
+    <div class="col-6 col-md-6">
+        <app-donut title="sales"></app-donut>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6 col-md-6">
+        <app-donut
+        [labels]="labels1"
+        [backgroundColor]="colors1"
+        [data]="data1"
+        title="Compras"></app-donut>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6 col-md-6">
+        <app-donut></app-donut>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6 col-md-6">
+        <app-donut></app-donut>
     </div>
 </div>
