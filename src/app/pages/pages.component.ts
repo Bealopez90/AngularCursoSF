@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingsService } from '../services/settings.service';
+
+declare function customInitFunctions(): void;
 
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
   styleUrls: ['./pages.component.css']
 })
-export class PagesComponent {
+export class PagesComponent implements OnInit{
 
-  public linkTheme = document.querySelector('#theme');
   public year = new Date().getFullYear();
 
-  constructor(){
+  constructor( private settingsService: SettingsService){
   }
 
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    const url = localStorage.getItem('theme') || './assets/css/colors/purple-dark.css';
-    this.linkTheme?.setAttribute('href', url);
+    customInitFunctions();
   }
   
 }
